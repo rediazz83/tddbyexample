@@ -10,6 +10,10 @@ public abstract class Money {
         return new Dollar(amount);
     }
 
+    public static Franc franc(int amount){
+        return new Franc(amount);
+    }
+
     @Override
     public boolean equals(Object object) {
         Money money = (Money) object;
