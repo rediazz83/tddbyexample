@@ -1,8 +1,6 @@
 package edu.globant.tddbyexample;
 
-public class Dollar {
-
-    private int amount;
+public class Dollar extends Money {
 
     Dollar(int amount) {
         this.amount = amount;
@@ -10,11 +8,5 @@ public class Dollar {
 
     Dollar times(int multiplier) {
         return new Dollar(amount * multiplier);
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        Dollar dollar = (Dollar) object;
-        return this.amount == dollar.amount;
     }
 }
