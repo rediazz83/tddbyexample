@@ -32,4 +32,12 @@ public class Money {
         return this.amount == money.amount
                 && this.getClass().equals(object.getClass());
     }
+
+    @Override
+    public String toString() {
+        return "Money{" +
+                "amount=" + amount +
+                ", currency='" + currency + '\'' +
+                '}';
+    }
 }
