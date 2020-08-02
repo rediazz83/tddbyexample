@@ -8,7 +8,7 @@ public class Dollar extends Money {
 
     @Override
     protected String currency() {
-        return null;
+        return "USD";
     }
 
     public Money times(int multiplier) {
