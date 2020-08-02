@@ -2,11 +2,8 @@ package edu.globant.tddbyexample;
 
 public class Franc extends Money {
 
-    private String currency;
-
     Franc(int amount, String currency) {
-        this.amount = amount;
-        this.currency = currency;
+        super(amount, currency);
     }
 
     @Override
