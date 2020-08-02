@@ -8,30 +8,21 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 public class MoneyTest {
 
     @Test
-    public void testMultiplicationDollar() {
-        Money five = Money.dollar(5);
-        assertEquals(Money.dollar(10), five.times(2));
-        assertEquals(Money.dollar(15), five.times(3));
+    public void testMultiplication() {
+        Money dollar = Money.dollar(5);
+        assertEquals(Money.dollar(10), dollar.times(2));
+        assertEquals(Money.dollar(15), dollar.times(3));
+
+        Money franc = Money.franc(5);
+        assertEquals(Money.franc(10), franc.times(2));
     }
 
     @Test
-    void testEqualityDollar() {
+    void testEquality() {
         assertEquals(Money.dollar(5), Money.dollar(5));
         assertNotEquals(Money.dollar(5), Money.dollar(8));
-        assertNotEquals(Money.dollar(5), Money.franc(5));
-    }
-
-    @Test
-    public void testMultiplicationFranc() {
-        Money five = Money.franc(5);
-        assertEquals(Money.franc(10), five.times(2));
-        assertEquals(Money.franc(15), five.times(3));
-    }
-
-    @Test
-    void testEqualityFranc() {
         assertEquals(Money.franc(5), Money.franc(5));
-        assertNotEquals(Money.franc(5), Money.franc(8));
+        assertNotEquals(Money.dollar(5), Money.franc(5));
     }
 
     @Test
