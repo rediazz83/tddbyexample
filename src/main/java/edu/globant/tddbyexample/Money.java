@@ -30,7 +30,7 @@ public class Money {
     public boolean equals(Object object) {
         Money money = (Money) object;
         return this.amount == money.amount
-                && this.getClass().equals(object.getClass());
+                && this.currency == money.currency;
     }
 
     @Override
