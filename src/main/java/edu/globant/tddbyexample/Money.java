@@ -10,9 +10,11 @@ public abstract class Money {
         this.currency = currency;
     }
 
-    protected abstract String currency();
-
     public abstract Money times(int multiplier);
+
+    public String currency() {
+        return currency;
+    }
 
     public static Money dollar(int amount){
         return new Dollar(amount, "USD");
