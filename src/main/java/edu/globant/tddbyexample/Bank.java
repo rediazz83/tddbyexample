@@ -11,7 +11,8 @@ public class Bank {
     }
 
     public int rate(String fromCurrency, String toCurrency) {
-        return (fromCurrency.equals("CHF") && toCurrency.equals("USD") ? 2 : 1);
+        int rate = fromCurrency.equals(toCurrency) ? 1 : rateMap.get(new Pair(fromCurrency, toCurrency));
+        return rate;
     }
 
     public void addRate(String fronCurrency, String toCurrency, int rate) {
