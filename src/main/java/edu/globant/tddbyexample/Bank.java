@@ -3,7 +3,7 @@ package edu.globant.tddbyexample;
 public class Bank {
 
     public Money reduce(Expression source, String toCurrency) {
-        return source.reduce(toCurrency);
+        return source.reduce(this, toCurrency);
     }
 
     public int rate(String fromCurrency, String toCurrency) {
