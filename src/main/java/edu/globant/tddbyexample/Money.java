@@ -30,8 +30,8 @@ public class Money implements Expression {
         return new Sum(this, addend);
     }
 
-    public Money reduce(String toCurrency) {
-        int rate = (currency.equals("CHF") && toCurrency.equals("USD")) ? 2 : 1;
+    public Money reduce(Bank bank, String toCurrency) {
+        int rate = bank.rate(this.currency, toCurrency);
         return new Money(amount / rate, toCurrency);
     }
 
