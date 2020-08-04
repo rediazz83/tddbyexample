@@ -15,7 +15,7 @@ public class Bank {
         return rate;
     }
 
-    public void addRate(String fronCurrency, String toCurrency, int rate) {
-        rateMap.put(new Pair(fronCurrency, toCurrency), rate);
+    public void addRate(String fromCurrency, String toCurrency, int rate) {
+        rateMap.put(new Pair(fromCurrency, toCurrency), rate);
     }
 }
