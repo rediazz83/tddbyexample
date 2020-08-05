@@ -22,14 +22,17 @@ public class Money implements Expression {
         return currency;
     }
 
+    @Override
     public Expression times(int multiplier) {
         return new Money(amount * multiplier, currency);
     }
 
+    @Override
     public Expression plus(Expression addend) {
         return new Sum(this, addend);
     }
 
+    @Override
     public Money reduce(Bank bank, String toCurrency) {
         int rate = bank.rate(this.currency, toCurrency);
         return new Money(amount / rate, toCurrency);
