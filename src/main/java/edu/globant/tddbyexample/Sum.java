@@ -2,17 +2,22 @@ package edu.globant.tddbyexample;
 
 public class Sum implements Expression {
 
-    Money augmend;
-    Money addmend;
+    Expression augmend;
+    Expression addmend;
 
-    public Sum(Money augmend, Money addmend) {
+    public Sum(Expression augmend, Expression addmend) {
         this.augmend = augmend;
         this.addmend = addmend;
     }
 
     @Override
     public Money reduce(Bank bank, String toCurrency) {
-        int amount = augmend.amount + addmend.amount;
+        int amount = augmend.reduce(bank, toCurrency).amount + addmend.reduce(bank, toCurrency).amount;
         return new Money(amount, toCurrency);
+    }
+
+    @Override
+    public Expression plus(Expression addend) {
+        return null;
     }
 }
